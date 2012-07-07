@@ -1,0 +1,197 @@
+html
+{
+    background-color: #9CD5F3;
+    background-position: 0px 0px;
+    
+    margin: 0;
+    padding: 0;
+}
+
+body
+{    
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Covers */
+
+.projects-cover {
+    
+    width: 550px;
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    margin-top: 15px;
+    
+    border: 5px solid #83BEDD;
+    
+    background-color: #fff;
+}
+
+.brands-cover {
+    
+    width: 550px;
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    margin-top: 15px;
+}
+
+
+
+/* Fonts and Texts */
+
+h1.subtitle
+{
+    color: #ffffff;
+    font-family: arial,tahoma,verdana;
+    font-size: 22px;
+    font-weight: bold;
+    
+    margin-top: -40px;
+    margin-bottom: 30px;
+    text-shadow: #000 1px 1px 1px;    
+}
+
+h2.title
+{
+    color: #29566D;
+    font-family: arial,tahoma,verdana;
+    font-size: 50px;
+    font-weight: 100;
+    
+    margin-top: 20px;
+}
+
+
+h2.header2
+{
+    color: #9A510A;
+    font-family: arial,tahoma,verdana;
+    font-size: 30px;
+    font-weight: 100;
+    
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+.footer
+{
+    color: #336899;
+    font-family: arial,tahoma,verdana;
+    font-size: 12px;
+    font-weight: 100;
+    
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.doc
+{
+    width: 600px;
+    position: relative;
+    
+    text-align: left;
+        
+    font-family: arial,tahoma,verdana;
+    font-size: 22px;
+    font-weight: 100;
+
+    color: #3C3C3C;
+
+    line-height: 140%;    
+    
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 30px;
+    
+}
+
+
+
+/* Menu */
+#nav-menu ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-menu li
+{
+    float: left;
+    margin: 0 0.15em;
+}
+
+#nav-menu li a:link
+{
+    height: 2em;
+    line-height: 2em;
+    float: left;
+    width: 7em;
+    display: block;
+    border: 0em solid #dcdce9;
+    color: #D3AF71;
+    text-decoration: none;
+    font-family: arial, tahoma, verdana;
+    text-align: center;
+}
+
+#nav-menu li a:visited
+{
+    height: 2em;
+    line-height: 2em;
+    float: left;
+    width: 7em;
+    display: block;
+    border: 0em solid #dcdce9;
+    color: #D3AF71;
+    text-decoration: none;
+    font-family: arial, tahoma, verdana;
+    text-align: center;
+}
+
+#nav-menu li a:hover
+{
+    height: 2em;
+    line-height: 2em;
+    float: left;
+    width: 7em;
+    display: block;
+    border: 0em solid #dcdce9;
+    
+    background-color: #1C3A4A;
+    color: #D3AF71;
+    text-decoration: none;
+    font-family: arial, tahoma, verdana;
+    text-align: center;
+}
+
+a.link1:link {color: #444;  padding-left: 10px; text-decoration: none;}
+a.link1:visited {color: #444;  padding-left: 10px;  text-decoration: none;}
+a.link1:hover {color: #222;  padding-left: 10px;  text-decoration: underline;}
+
+
+
+
+/* Hide from IE5-Mac \*/
+#nav-menu li a
+{
+    float: none
+}
+/* End hide */
+
+#nav-menu
+{
+    width:30em
+}
+
+
