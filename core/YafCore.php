@@ -3,7 +3,7 @@
  * YafCore class file.
  * 
  * @author Andreas Bourakis <bourakis@gmail.com>
- * @contributors Konstantinos Apazidis (konapaz@gmail.com)
+ * @contributors Konstantinos Apazidis <konapaz@gmail.com>
  * @copyright omicro.net
  * @link http://www.github.com/addboo/yaf
  * @license http://www.opensource.org/licenses/mit-license.php
@@ -46,12 +46,14 @@ class YafCore
 
             Loader::run(); //Run the Libs and Modules defined in config file.
     
-             if (!self::controller_loader()) {
-                 die("No controller found!");
-             }
-
-            if (!self::action_loader()) {
-                die("No action found!");
+            if (!self::controller_loader())
+            {
+                die("No controller found!");
+            }
+            
+            if (!self::action_loader())
+            {
+               die("No action found!");
             }
 
             self::params_loader();
@@ -72,8 +74,10 @@ class YafCore
 
                 self::$controller_name = $_GET['c'];
                 self::$controller_file = self::$controller_name.".php";
+            
                 return true;
-            } else
+            }
+            else
             {
                 return false;
             }
@@ -88,8 +92,11 @@ class YafCore
 
                 self::$controller_name = $_POST['c'];
                 self::$controller_file = self::$controller_name.".php";
+            
                 return true;
-            } else
+            
+            }
+            else
             {
                 return false;
             }
@@ -102,6 +109,7 @@ class YafCore
             self::$controller_file = self::$controller_name.".php";
             
             require_once("protected/controllers/".self::$controller_file);
+            
             return true;
         }        
     }
@@ -114,7 +122,8 @@ class YafCore
             elseif (isset($_POST['a'])) self::$action = $_POST['a'];
                 else self::$action = 'init';
         
-        if (!method_exists(self::$controller_name,self::$action)) return false;
+        if (!method_exists(self::$controller_name,self::$action))
+            return false;
       
         call_user_func(array(self::$controller_name, self::$action));
         
@@ -132,7 +141,8 @@ class YafCore
             $params = $_GET['p'];
                 
             while(list($key, $val) = @each($params))
-            {   //securing
+            {
+                //securing
                 if (PureValidator::isCastAlphaNum($val)) self::$params[] = $val;
             }
             
