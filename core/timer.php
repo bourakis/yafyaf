@@ -17,7 +17,7 @@
  * -----------------------------------------------------------------------------
 **/
 
-class execTimer {
+class Timer {
 	private $starttime="",$endtime="",$timeparts="";
 
 	public function reStart(){

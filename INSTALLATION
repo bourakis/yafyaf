@@ -1,0 +1,42 @@
+================================================================================
+
+                        I N S T A L L A T I O N
+
+                     yafyaf - yet another framework
+
+                by Andreas Bourakis <bourakis@gmail.com>
+                           
+                           omicro.net (c) 2012
+                               
+================================================================================
+
+
+Configuration
+-------------
+The config.php is in array mode containing the sections below:
+
+mode: defining the working mode. Under development you could use DEBUG. In
+      production mode use NORMAL.
+      
+name: declare the name of the project.
+
+
+
+default_controller:
+view:
+model:
+
+modules:
+libs:
+lang:
+db:
+
+
+
+Configuration File:
+    protected/configs/config.php
+    
+Database mysql schema:
+    PROJECT_FILES/yaf_blog.sql
+    
+

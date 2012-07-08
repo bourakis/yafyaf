@@ -3,7 +3,6 @@
 return array(
     'mode' => 'DEBUG', //DEBUG or NORMAL
     'name' => 'Personal Blog',
-    'app_dir_name' => 'blog',
     
     'default_controller' => 'MainController',
     'view'=>'MainView', // MainView.php & class

@@ -5,7 +5,7 @@
  * @author Andreas Bourakis <bourakis@gmail.com>
  * @contributors Konstantinos Apazidis (konapaz@gmail.com)
  * @copyright omicro.net
- * @link http://www.github.com/addboo/yaf
+ * @link http://www.github.com/addboo/yafyaf
  * @license http://www.opensource.org/licenses/mit-license.php
  * @requires
  *
@@ -36,22 +36,19 @@ class Loader
     // Then run the modules from the stack
     function run()
     {
-        // Loading the config file
-        $config = require($_SESSION['CONFIG_PATH']."config.php");
-
-
         // Modules Part
         $x = 0;
-        while(isset($config['modules'][$x])) //Load all Modules
-        {  //echo $config['modules'][$x];
-            self::module_load($config['modules'][$x]);
+        while(isset(YafCore::$cfg['modules'][$x])) //Load all Modules
+        {  
+            self::module_load(YafCore::$cfg['modules'][$x]);
             $x++;
         }
         
         $x=0;
         while(isset(self::$modules_stack[$x])) // Run each Module/Class.
         {
-            call_user_func(array(self::$modules_stack[$x], 'init')); //call init() function from each module.
+            //call init() function from each module.
+            call_user_func(array(self::$modules_stack[$x], 'init')); 
             $x++;
         }
 
@@ -59,16 +56,17 @@ class Loader
 
         // Libs Part
         $x = 0;
-        while(isset($config['libs'][$x])) //Load all Libs
+        while(isset(YafCore::$cfg['libs'][$x])) //Load all Libs
         {
-            self::lib_load($config['libs'][$x]);
+            self::lib_load(YafCore::$cfg['libs'][$x]);
             $x++;
         }
         
         $x=0;
         while(isset(self::$libs_stack[$x])) // Run each Lib/Class.
         {
-            call_user_func(array(self::$libs_stack[$x], 'init')); //call init() function from each lib.
+            //call init() function from each lib.
+            call_user_func(array(self::$libs_stack[$x], 'init')); 
             $x++;
         }
         

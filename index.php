@@ -32,8 +32,8 @@ $cfg = require_once($_SESSION['CONFIG_PATH'].'config.php');
 // Set Application's path.
 $_SESSION['APP_PATH'] = dirname(__FILE__)."/".$cfg['app_dir_name'];
 
-require_once($_SESSION['CORE_PATH'].'/timer.php');
-$timeEx = new ExecTimer();
+require_once($_SESSION['CORE_PATH'].'/Timer.php');
+$timeEx = new Timer();
 $timeEx->reStart();
 
 require_once($_SESSION['CORE_PATH'].'/Yaf.php');

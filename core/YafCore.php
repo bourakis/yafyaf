@@ -5,7 +5,7 @@
  * @author Andreas Bourakis <bourakis@gmail.com>
  * @contributors Konstantinos Apazidis <konapaz@gmail.com>
  * @copyright omicro.net
- * @link http://www.github.com/addboo/yaf
+ * @link http://www.github.com/addboo/yafyaf
  * @license http://www.opensource.org/licenses/mit-license.php
  * @requires
  *

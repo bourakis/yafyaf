@@ -5,7 +5,7 @@
  * @author Konstantinos Apazidis (konapaz@gmail.com)
  * @contributors
  * @copyright istocosmos.gr
- * @link http://www.github.com/addboo/yaf
+ * @link http://www.github.com/addboo/yafyaf
  * @license http://www.opensource.org/licenses/mit-license.php
  * @requires
  *

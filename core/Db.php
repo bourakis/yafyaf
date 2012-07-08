@@ -4,7 +4,7 @@
  * @version: 2.0 - (02/12/2011)
  * @requires 
  * @author Andreas Bourakis (bourakis@gmail.com)
- * @Description: TMethods for managing Mysql database.
+ * @Description: Methods for managing Mysql database.
  
  * Licensed under MIT licence:
  *   http://www.opensource.org/licenses/mit-license.php
