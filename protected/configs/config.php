@@ -5,8 +5,6 @@ return array(
     'name' => 'Personal Blog',
     
     'default_controller' => 'MainController',
-    'view'=>'MainView', // MainView.php & class
-    'model'=>'MainModel', // MainModel.php & class
     
     // autoloading classes and modules
     'modules'=>array(

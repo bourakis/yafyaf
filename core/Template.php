@@ -58,7 +58,7 @@ class Template
     
     function generate()
     {        
-        require_once "protected/templates/".self::$template.".php";   
+        require_once "protected/templates/".self::$template;   
     }
     
     
