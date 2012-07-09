@@ -1,3 +1,14 @@
-yafyaf 
-(Yet Another Framework) 
-baby version 0.0
+================================================================================
+
+                     yafyaf - yet another framework
+                           
+                           omicro.net (c) 2012
+                               
+================================================================================
+
+yafyaf is an alternative proposal to existing complicated frameworks which
+demands strong effort in order to gain familiarity with coding environment.
+Also, using yaf will be gained re-usability of code since the developer will
+have to choose in a variety of modules in order to build an application fast
+and easy.
+

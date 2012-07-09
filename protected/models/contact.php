@@ -3,8 +3,7 @@
 $content = array();
 
 
-
-$content['doc'] = "
+$content['doc']['en'] = "
 
     <h2 class=\"header2\">Contact</h2>
     
@@ -12,7 +11,17 @@ $content['doc'] = "
         Phone: 6931234567 <br>
         email: abourakis@medcollege.edu.gr
     </div>
+";
 
+
+$content['doc']['gr'] = "
+
+    <h2 class=\"header2\">Επικοινωνία</h2>
+    
+    <div class=\"doc\">
+        Κιν.: 6931234567 <br>
+        email: abourakis@medcollege.edu.gr
+    </div>
 ";
 
 return $content;

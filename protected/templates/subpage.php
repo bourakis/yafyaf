@@ -19,6 +19,11 @@
     <td width="20">
     </td>
     <td valign="top">
+
+        <br>
+        <a href="index.php?lang=gr">GR</a> &nbsp;&nbsp;
+        <a href="index.php?lang=en">EN</a>
+
         <h2 class="title">Andreas Bourakis</h2>
         <h1 class="subtitle">Software Engineer, Entrepreneur, Part-time Lecturer</h1>
         
