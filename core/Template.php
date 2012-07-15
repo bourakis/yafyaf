@@ -30,13 +30,13 @@ class Template
     public $js_stack = array();
 
     
-    function set($template_name)
+    static function set($template_name)
     {
         self::$template = $template_name;
     }
     
     
-    function bind($tag_name, $data)
+    static function bind($tag_name, $data)
     {
         if(is_array($data))
         {
@@ -51,12 +51,12 @@ class Template
         }
     }
     
-    function getData()
+    static function getData()
     {
         return self::$tag;
     }
     
-    function generate()
+    static function generate()
     {        
         require_once "protected/templates/".self::$template;   
     }

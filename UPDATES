@@ -1,0 +1,25 @@
+
+=============================================================================================
+
+                             y a f y a f -- Updates history
+
+=============================================================================================
+
+15/07/2012:
+-----------
+
+* The multi-language transformed from one big file containing an array for every language,
+  to separate files per language i.e. profile.en.php instead of profile.php which contained
+  a big array with every translated language inside. Except 'models' it works for 'viewers'
+  as well. With the same way the Viewers will be able to be multilingual.
+  [Andreas Bourakis]
+
+* The models from now on will contain ONLY data. On previous versions, models contained
+  html contents as well. This changed because of confusion between the roles of Models and
+  Views.
+  [Andreas Bourakis]
+
+
+
+
+

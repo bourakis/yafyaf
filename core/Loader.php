@@ -32,9 +32,9 @@ class Loader
     public static $modules_stack = array();
     public static $libs_stack = array();
 
-    
+
     // Then run the modules from the stack
-    function run()
+    static function run()
     {
         // Modules Part
         $x = 0;
@@ -74,7 +74,7 @@ class Loader
     
     
     // Module loader to the stack array.
-    function module_load($module_name)
+    static function module_load($module_name)
     {
         if(include_once($_SESSION['BASE_PATH'].'/modules/'.$module_name.'/'.$module_name.'.php'))
         {    
@@ -90,7 +90,7 @@ class Loader
 
 
     // Lib loader to the stack array.
-    function lib_load($lib_name)
+    static function lib_load($lib_name)
     {
         if(include_once($_SESSION['BASE_PATH'].'/core/'.$lib_name.'.php'))
         {    
@@ -105,25 +105,44 @@ class Loader
     }
 
 
-    function model($model_filename, $function, $params)
+    static function model($model_filename, $function, $params)
     {
+        // Checks if the given filename in $model_filename contains
+        // the .php extension.If exists, then remove it!
+        if($res = stripos($model_filename, ".php"))
+        {
+            $model_filename = str_replace(".php", "", $model_filename);
+        }
+
+
+        $filename = $model_filename.".".Multilang::$lang.".php";
+
+
+        // Check if the file isn't in multi-language format like content.en.php
+        // but it's content.php instead.
+        if(!file_exists("protected/models/".$filename))
+        {
+            $filename = $model_filename.".php";
+        }
+
+
         // if $function is empty then load the data from a file
         // containing the data in array.
         if($function == "" )
         {
-            return require_once 'protected/models/'.$model_filename;
+            return require_once 'protected/models/'.$filename;
         }
         // load data from the class, calling function and/or declaring
         // parameters.
         else
         {
-            require_once 'protected/models/'.$model_filename.'.php';
+            require_once 'protected/models/'.$filename;
             return call_user_func(array($model_filename, $function), $params);
         }
     }
     
     
-    function view($view_name, $data = null)
+    static function view($view_filename, $data = null)
     {
         /*
         if(is_array($data))
@@ -131,28 +150,28 @@ class Loader
             extract($data);
         }
         */
-        
-        return require_once 'protected/views/'.$view_name;
-    }
 
-
-    function html($path_filename)
-    {
-        /*
-        $data = file($path_filename);
-        foreach($data as $value)
+        // Checks if the given filename in $model_filename contains
+        // the .php extension.If exists, then remove it!
+        if($res = stripos($view_filename, ".php"))
         {
-            $html .= "$value";
+            $view_filename = str_replace(".php", "", $view_filename);
         }
-        
-        return $html;
-        */
-        
-        return require_once($path_filename);
+
+        $filename = $view_filename.".".Multilang::$lang.".php";
+
+        // Check if the file isn't in multi-language format like content.en.php
+        // but it's content.php instead.
+        if(!file_exists("protected/views/".$filename))
+        {
+            $filename = $view_filename.".php";
+        }
+
+        return require_once 'protected/views/'.$filename;
     }
-    
-    
-    function widget($widget_name, $function, $params)
+
+
+    static function widget($widget_name, $function, $params)
     {
         require_once 'protected/widgets/'.$widget_name.'/'.$widget_name.'.php';
         $function($params);

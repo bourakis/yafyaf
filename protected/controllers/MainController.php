@@ -4,28 +4,32 @@ class MainController
 {
     static function init()
     {
-        $menu    = Loader::view("menu.php");
-        $footer  = Loader::view("footer.php");
-        $main  = Loader::model("main.php", "", "");
+        $menu    = Loader::view("menu.php");  //Get html part
+        $footer  = Loader::view("footer.php");  //Get html part
+
+        $main_content = Loader::model("main.php", "", "");  // Get data
+        $main_content = Loader::view("main_content.php", $main_content);  // Pass the data to
+                                                                          // the View (visualization)
+        Template::set('main.php');  // Set template's name
+        Template::bind('menu', $menu);  // Binding the $menu contents to template with tag name "menu"
+        Template::bind('footer', $footer);  // Binding the $footer contents to template with tag name "footer"
+        Template::bind('doc', $main_content);
         
-        Template::set('main.php');
-        Template::bind('menu', $menu[Multilang::$lang]);
-        Template::bind('footer', $footer);
-        Template::bind('doc', $main['doc'][Multilang::$lang]);
-        
-        Template::generate();
+        Template::generate();  // Generate the web page.
     }
 
     static function profile()
     {
         $menu    = Loader::view("menu.php"); //Get html part
         $footer  = Loader::view("footer.php"); //Get another html part
+
         $doc     = Loader::model("profile.php", "", ""); //Get data
- 
+        $doc     = Loader::view("profile.php", $doc);
+
         Template::set('subpage.php'); //Set template's name
-        Template::bind('menu',  $menu[Multilang::$lang]); //bind the returned data to the tag name.
+        Template::bind('menu',  $menu); //bind the returned data to the tag name.
         Template::bind('footer', $footer);
-        Template::bind('doc', $doc['doc'][Multilang::$lang]);
+        Template::bind('doc', $doc);
         
         Template::generate(); //Generate the web page.
     }
@@ -39,7 +43,7 @@ class MainController
 
         Template::set('subpage.php'); //Set the template to be used.
         Template::bind('doc', $list); 
-        Template::bind('menu',  $menu[Multilang::$lang]);
+        Template::bind('menu',  $menu);
         Template::bind('footer', $footer);
     
         Template::generate();
@@ -49,12 +53,13 @@ class MainController
     {
         $menu     = Loader::view("menu.php");
         $footer   = Loader::view("footer.php");
-        $contact = Loader::model("contact.php", "", "");
-        
+        $contact  = Loader::model("contact.php", "", "");
+        $contact1 = Loader::view("contact.php", $contact);
+
         Template::set('subpage.php');
-        Template::bind('menu',  $menu[Multilang::$lang]);
+        Template::bind('menu',  $menu);
         Template::bind('footer', $footer);
-        Template::bind('doc', $contact['doc'][Multilang::$lang]);
+        Template::bind('doc', $contact1);
         
         Template::generate();
     }
