@@ -37,7 +37,7 @@ class YafCore
 
 
     
-    function run($cfg)
+    static function run($cfg)
     {
         self::$cfg = $cfg;
         
@@ -63,7 +63,7 @@ class YafCore
     
 
     
-    function controller_loader()
+    static function controller_loader()
     {
         if(isset($_GET['c'])) //$_GET['c'] is for controller
         {
@@ -116,7 +116,7 @@ class YafCore
 
 
 
-    function action_loader()
+    static function action_loader()
     {
         if (isset($_GET['a'])) self::$action = $_GET['a'];
             elseif (isset($_POST['a'])) self::$action = $_POST['a'];
@@ -132,7 +132,7 @@ class YafCore
 
 
 
-    function params_loader()
+    static function params_loader()
     {   
         $params = array();
 
