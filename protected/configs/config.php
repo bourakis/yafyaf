@@ -1,4 +1,4 @@
-<?
+<?php
 
 return array(
     'mode' => 'DEBUG', //DEBUG or NORMAL
